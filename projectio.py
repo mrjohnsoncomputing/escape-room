@@ -64,7 +64,7 @@ class Projectio:
             GPIO.setup(self.AB, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
             GPIO.add_event_detect(self.AB, GPIO.BOTH, callback=my_callback)
         
-            message = raw_input('\nPress any key to exit.\n')
+            message = input('\nPress any key to exit.\n')
         
         finally:
             GPIO.cleanup()
