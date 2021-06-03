@@ -34,8 +34,8 @@ class Projectio:
         else:
             return False
 
-    def LED_on(self, pin=self.LED):
-        GPIO.output(pin, GPIO.HIGH)
+    def LED_on(self):
+        GPIO.output(self.LED, GPIO.HIGH)
 
-    def LED_off(self, pin=self.LED):
-        GPIO.output(pin, GPIO.LOW)
+    def LED_off(self):
+        GPIO.output(self.LED, GPIO.LOW)
