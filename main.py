@@ -6,7 +6,7 @@ import RPi.GPIO as GPIO
 # A+B 16 (GPIO 23)
 # C+D 18 (GPIO 24)
 
- # Initiate Latching Switch
-        self.ls1 = 26
-        GPIO.setmode(GPIO.BCM)
-        GPIO.setup(self.ls1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+# Initiate Latching Switch
+AB = 16
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(AB, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
