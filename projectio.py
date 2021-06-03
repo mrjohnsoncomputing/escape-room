@@ -1,5 +1,7 @@
 import RPi.GPIO as GPIO
 from time import sleep as wait
+import datetime
+
 
 class Projectio:
     def __init__(self):
@@ -11,8 +13,9 @@ class Projectio:
 
         # Initiate Latching Switch
         self.AB = 23
-        GPIO.setmode(GPIO.BCM)
-        GPIO.setup(self.AB, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+        # GPIO.setmode(GPIO.BCM)
+        # GPIO.setup(self.AB, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+        self.testBridge()
 
         self.LED = 27
         # Assign LED
@@ -47,3 +50,23 @@ class Projectio:
             wait(1)
             self.LED_off()
             wait(1)
+
+    def test_bridge(self):
+ 
+        def my_callback(channel):
+            if GPIO.input(channel) == GPIO.HIGH:
+                print('\n▼  at ' + str(datetime.datetime.now()))
+            else:
+                print('\n ▲ at ' + str(datetime.datetime.now()))
+        
+        try:
+            GPIO.setmode(GPIO.BCM)
+            GPIO.setup(self.AB, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+            GPIO.add_event_detect(self.AB, GPIO.BOTH, callback=my_callback)
+        
+            message = raw_input('\nPress any key to exit.\n')
+        
+        finally:
+            GPIO.cleanup()
+        
+        print("Goodbye!")
