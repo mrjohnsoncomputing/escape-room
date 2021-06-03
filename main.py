@@ -3,6 +3,10 @@ from projectio import Projectio
 io = Projectio()
 switched = False
 
+print("Testing LEDs")
+io.test_LED()
+
+print("Test Complete")
 while True:
     # IF main toggle is on
     if True:

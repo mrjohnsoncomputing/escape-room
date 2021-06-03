@@ -1,4 +1,5 @@
 import RPi.GPIO as GPIO
+from time import sleep as wait
 
 class Projectio:
     def __init__(self):
@@ -39,3 +40,10 @@ class Projectio:
 
     def LED_off(self):
         GPIO.output(self.LED, GPIO.LOW)
+
+    def test_LED(self):
+        for i in range(10):
+            self.LED_on()
+            wait(1)
+            self.LED_off()
+            wait(1)
