@@ -9,11 +9,11 @@ class Projectio:
         # C+D 18 (GPIO 24)
 
         # Initiate Latching Switch
-        self.AB = 16
+        self.AB = 23
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.AB, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-        self.LED = 13
+        self.LED = 27
         # Assign LED
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.LED, GPIO.OUT)
