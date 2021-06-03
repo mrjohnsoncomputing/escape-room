@@ -3,7 +3,7 @@ from projectio import Projectio
 io = Projectio()
 switched = False
 
-while true:
+while True:
     # IF main toggle is on
     if True:
         # If connection made in AB
