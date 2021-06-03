@@ -15,7 +15,7 @@ class Projectio:
         self.AB = 23
         # GPIO.setmode(GPIO.BCM)
         # GPIO.setup(self.AB, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-        self.testBridge()
+        self.test_bridge()
 
         self.LED = 27
         # Assign LED
